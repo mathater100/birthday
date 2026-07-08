@@ -104,7 +104,6 @@
             font-weight: 600;
         }
 
-        /* Interactive Grid Layout */
         .traits-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -149,7 +148,6 @@
             color: var(--text-muted);
         }
 
-        /* Pure CSS Interactive Button */
         .action-btn {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: #fff;
@@ -217,7 +215,6 @@
     </div>
 
     <script>
-        // High-Performance Vanilla Canvas Confetti System
         const canvas = document.getElementById('confetti-canvas');
         const ctx = canvas.getContext('2d');
 
@@ -263,7 +260,6 @@
                 if (this.fade > 0) {
                     this.opacity -= this.fade;
                 } else {
-                    // Constant slow drift down if spawned from top
                     if (this.y > height) {
                         this.y = -10;
                         this.x = Math.random() * width;
@@ -282,13 +278,11 @@
             }
         }
 
-        // Initialize steady background ambient confetti stream
         for (let i = 0; i < 60; i++) {
             particles.push(new Confetti(Math.random() * width, Math.random() * height));
         }
 
         function triggerBurst() {
-            // Generates a massive dynamic celebratory payload from the center of the screen
             const midX = width / 2;
             const midY = height / 2;
             for (let i = 0; i < 50; i++) {
@@ -311,7 +305,6 @@
             requestAnimationFrame(animate);
         }
 
-        // Trigger an immediate burst on page load
         setTimeout(triggerBurst, 400);
         animate();
     </script>
